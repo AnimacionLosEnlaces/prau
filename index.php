@@ -23,6 +23,7 @@ if(isset($_GET['logout'])){
 <head>
 <meta charset="utf-8">
 <title><?php echo $site_title ?></title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -84,6 +85,8 @@ if (mysqli_num_rows($result_validate) > 0) {
 
 <?php endif //Final  ?>
 
+
+<script src="js/prau.js"></script>
 
 </body>
 </html>
