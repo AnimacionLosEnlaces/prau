@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2017 a las 19:29:41
+-- Tiempo de generación: 20-04-2017 a las 19:51:10
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `accesorios`
 --
 
+DROP TABLE IF EXISTS `accesorios`;
 CREATE TABLE IF NOT EXISTS `accesorios` (
   `id_accesorio` int(15) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
@@ -40,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `accesorios` (
 -- Estructura de tabla para la tabla `categorias`
 --
 
+DROP TABLE IF EXISTS `categorias`;
 CREATE TABLE IF NOT EXISTS `categorias` (
   `id_categorias` int(15) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
@@ -52,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 -- Estructura de tabla para la tabla `ciclos`
 --
 
+DROP TABLE IF EXISTS `ciclos`;
 CREATE TABLE IF NOT EXISTS `ciclos` (
   `id_ciclo` int(15) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
@@ -64,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `ciclos` (
 --
 
 INSERT INTO `ciclos` (`id_ciclo`, `nombre`, `curso`) VALUES
-(1, '1º de Animación', '1'),
+(1, '1º de Animación 3D', '1'),
 (2, '1º de Producción', '1'),
 (3, '2º de Animación', '2'),
 (4, '2º de Producción', '2');
@@ -75,6 +78,7 @@ INSERT INTO `ciclos` (`id_ciclo`, `nombre`, `curso`) VALUES
 -- Estructura de tabla para la tabla `marcas`
 --
 
+DROP TABLE IF EXISTS `marcas`;
 CREATE TABLE IF NOT EXISTS `marcas` (
   `id_marca` int(15) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
@@ -87,6 +91,7 @@ CREATE TABLE IF NOT EXISTS `marcas` (
 -- Estructura de tabla para la tabla `materiales`
 --
 
+DROP TABLE IF EXISTS `materiales`;
 CREATE TABLE IF NOT EXISTS `materiales` (
   `id_material` int(15) NOT NULL AUTO_INCREMENT,
   `codigo_material` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
@@ -105,6 +110,7 @@ CREATE TABLE IF NOT EXISTS `materiales` (
 -- Estructura de tabla para la tabla `prestamos`
 --
 
+DROP TABLE IF EXISTS `prestamos`;
 CREATE TABLE IF NOT EXISTS `prestamos` (
   `id_prestamo` int(15) NOT NULL AUTO_INCREMENT,
   `id_alumno` int(15) NOT NULL,
@@ -119,6 +125,7 @@ CREATE TABLE IF NOT EXISTS `prestamos` (
 -- Estructura de tabla para la tabla `rel_prestamos_materiales`
 --
 
+DROP TABLE IF EXISTS `rel_prestamos_materiales`;
 CREATE TABLE IF NOT EXISTS `rel_prestamos_materiales` (
   `id_rel` int(15) NOT NULL AUTO_INCREMENT,
   `id_prestamo` int(15) NOT NULL,
@@ -133,6 +140,7 @@ CREATE TABLE IF NOT EXISTS `rel_prestamos_materiales` (
 -- Estructura de tabla para la tabla `rel_subcategorias_accesorios`
 --
 
+DROP TABLE IF EXISTS `rel_subcategorias_accesorios`;
 CREATE TABLE IF NOT EXISTS `rel_subcategorias_accesorios` (
   `id_rel` int(15) NOT NULL AUTO_INCREMENT,
   `id_subcategoria` int(15) NOT NULL,
@@ -148,6 +156,7 @@ CREATE TABLE IF NOT EXISTS `rel_subcategorias_accesorios` (
 -- Estructura de tabla para la tabla `rel_usuarios_ciclos`
 --
 
+DROP TABLE IF EXISTS `rel_usuarios_ciclos`;
 CREATE TABLE IF NOT EXISTS `rel_usuarios_ciclos` (
   `id_rel` int(11) NOT NULL AUTO_INCREMENT,
   `id_usuario` int(15) NOT NULL,
@@ -169,6 +178,7 @@ INSERT INTO `rel_usuarios_ciclos` (`id_rel`, `id_usuario`, `id_ciclo`) VALUES
 -- Estructura de tabla para la tabla `subcategorias`
 --
 
+DROP TABLE IF EXISTS `subcategorias`;
 CREATE TABLE IF NOT EXISTS `subcategorias` (
   `id_subcategoria` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
@@ -183,6 +193,7 @@ CREATE TABLE IF NOT EXISTS `subcategorias` (
 -- Estructura de tabla para la tabla `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` int(15) NOT NULL AUTO_INCREMENT,
   `codigo_usuario` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
@@ -201,7 +212,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `codigo_usuario`, `nombre`, `imagen`, `correo`, `telefono`, `dni`, `comentarios`, `administrador`) VALUES
-(1, '987654321', 'Álvaro Holguera', 'person-outline-filled.png', 'correo@laultimapregunta.com', '555321654', '', 'No commnent', 1);
+(1, '987654321', 'Álvaro Holguera', 'person-outline-filled.png', 'correo@midominio.com', '555321654', '', 'No commnent', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
