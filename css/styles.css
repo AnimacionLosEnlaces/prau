@@ -4,6 +4,18 @@ body {
 	background-color:#E9E9E9;
 }
 
+h4 {
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:24px;
+}
+h4 span {
+	color: #C00;
+}
+
+#usr_data {
+	display:none;
+}
+
 #usr_error {
 	display:none;
 }

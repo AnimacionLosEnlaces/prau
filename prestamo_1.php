@@ -16,19 +16,21 @@ if(!isset($_SESSION['prau_id_usuario'])) {
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body onLoad="initJS()">
 <form name="form1" method="post" onsubmit="return false">
   <input type="text" name="usr_input" id="usr_input">
 </form>
 
 <div id="usr_data">
 	<img id="usr_img">
-	<span id="usr_name"></span>
-	<span id="usr_curso"></span>
+	<h4>Nombre: <span id="usr_name"></span></h4>
+	<h4>Curso: <span id="usr_curso"></span></h4>
 </div>
 <div id="usr_error">
 	ERROR
 </div>
+
+
 
 <script src="js/prestamo_1.js"></script>
 </body>
