@@ -1,3 +1,13 @@
+<?php
+session_start();
+include_once('includes/config.php');
+
+//Si el usuario no está logeado lo reenviamos a la home
+if(!isset($_SESSION['prau_id_usuario'])) {
+	header("Location: index.php");
+	die();	
+}
+?>
 <!doctype html>
 <html>
 <head>

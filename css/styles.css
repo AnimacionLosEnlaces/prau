@@ -4,3 +4,7 @@ body {
 	background-color:#E9E9E9;
 }
 
+#usr_error {
+	display:none;
+}
+
