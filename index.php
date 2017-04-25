@@ -29,7 +29,7 @@ if(isset($_GET['logout'])){
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body onLoad="document.getElementById('code').focus()">
 
 
 <?php if(isset($_SESSION['prau_id_usuario'])) : //Compruebo si está logearo?>

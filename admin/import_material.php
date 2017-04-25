@@ -31,10 +31,12 @@ if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
 		$code = "IS-" . $row['num_orden'];
-		$nombre = $row['descripcion'];
+		$nombre = ((strpos($row['descripcion'], $row['objeto']) == false)) ? $row['objeto'] . " " . strtolower($row['descripcion']) :  $row['descripcion'] ;
+		
 		$modelo = $row['modelo'];
 		$no_serie = $row['numero_serie'];
 		$descripcion = $row['observaciones'];
+		$precio = $row['precio'];
 		
         echo "<p>Code: " . $code . "</p>";
 		echo "<p>Nombre: " . $nombre . "</p>";
@@ -67,11 +69,13 @@ if (mysqli_num_rows($result) > 0) {
 		if(mysqli_num_rows($result_check) == 0)
 		{
 			//Insertamos el nuevo material
+			
 			mysqli_query($conn, "INSERT INTO `materiales` 
 			(`id_material`, `codigo_material`, `nombre`, `modelo`, `id_marca`, `id_subcategoria`, `no_serie`, `descripcion`) 
 			VALUES (NULL, '$code', '$nombre', '$modelo', '$id_marca', '1', '$no_serie', '$descripcion');");
 			$id_material = mysqli_insert_id($conn);
-			$aviso = " -  NUEVO ($id_material)";
+			$aviso = " -  NUEVO MATERIAL ($id_material)";
+			
 		}
 		
 		echo "<hr>";

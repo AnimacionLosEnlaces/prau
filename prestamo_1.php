@@ -22,13 +22,24 @@ if(!isset($_SESSION['prau_id_usuario'])) {
 </form>
 
 <div id="usr_data">
-	<img id="usr_img">
+	<img id="usr_img" height="250">
 	<h4>Nombre: <span id="usr_name"></span></h4>
 	<h4>Curso: <span id="usr_curso"></span></h4>
 </div>
 <div id="usr_error">
 	ERROR
 </div>
+<div id="product_input_div">
+<input type="text" name="product_input" id="product_input">
+
+</div>
+<div id="material">
+
+
+</div>
+</form>
+
+
 
 
 

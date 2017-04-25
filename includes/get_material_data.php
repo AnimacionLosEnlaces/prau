@@ -11,22 +11,15 @@ mysqli_query($conn,"set names 'utf8'");
 
 $row = array();
 
-if(isset($_GET['u']) && $_GET['u'] != '') {
+if(isset($_GET['m']) && $_GET['m'] != '') {
 	//Consulta SQL compleja que devuelve los datos del usuario y de los ciclos en los que está inscrito
-	$sql = "SELECT U.*, R.id_ciclo, C.nombre AS nombre_curso, C.curso FROM 
-			usuarios U, rel_usuarios_ciclos R, ciclos C
-			WHERE U.codigo_usuario = '" . $_GET['u'] . "' 
-			AND U.id_usuario = R.id_usuario 
-			AND R.id_ciclo = C.id_ciclo";
+	$sql = "SELECT * FROM materiales WHERE codigo_material = '" . $_GET['m'] . "' LIMIT 1";
 	//Ejecuto la consulta SQL
 	$result = mysqli_query($conn, $sql);
 	
 	//Compruebo que me ha devuelto algún registro
 	if (mysqli_num_rows($result) > 0) {
 		$row = mysqli_fetch_assoc($result);
-		
-		//Id de usuario
-		$id_usuario = $row['id_usuario'];
 		
 		$row['error'] = "";
 		
@@ -38,7 +31,7 @@ if(isset($_GET['u']) && $_GET['u'] != '') {
 }
 else
 {
-	$row['error'] = "No se ha especificado código de usuario";
+	$row['error'] = "No se ha especificado código de material";
 }
 echo json_encode($row);
 ?>

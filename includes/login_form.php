@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $sql);
 <p><img src="img/home_logo_prau.png" width="35%"></p>
 <p>&nbsp; </p>
 <form name="form1" method="post" action="index.php">
-    <input list="login_list" name="code">
+    <input list="login_list" name="code" id="code">
     
   <datalist id="login_list">
 <?php
