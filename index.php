@@ -21,6 +21,9 @@ if(isset($_GET['logout'])){
 <!doctype html>
 <html>
 <head>
+
+<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,900|Varela+Round" rel="stylesheet">
+
 <meta charset="utf-8">
 <title>PRAU</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -75,7 +78,6 @@ if (mysqli_num_rows($result_validate) > 0) {
 }
 
 ?>
-
 
 
 <?php else : //No está logeado ?>
