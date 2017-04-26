@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "inaem_prau";
+$dbname = "prau";
 
 /*
 
